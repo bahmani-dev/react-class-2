@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+* {
+  /* color: white; */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+button {
+  color: black;
+}
+
+#overlay {
+  z-index: 0;
+}
