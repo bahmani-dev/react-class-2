@@ -7,6 +7,7 @@ export const About = () => {
     // logic
     console.log("Component mounted");
   }, []);
+
   return (
     <div>
       <div className="bg-black">

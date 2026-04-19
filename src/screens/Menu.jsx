@@ -1,62 +1,57 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export const Menu = () => {
-  const [count, setCount] = useState(0);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, []);
-
-  useEffect(() => {
-    console.log("Count changed");
-  }, [count]);
-
+const Menu = () => {
+  const [show, setShow] = useState(false);
   return (
-    <div className=" text-[50px] h-100 bg-lime-600 ">
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
-      <p>You. clicked {count} times</p>
-      <button
-        onClick={() => {
-          setCount(count + 1);
-        }}
-        className="cursor-pointer"
-      >
-        Click me
-      </button>
-      <form>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        />
-        <br />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => {
-            setPassword("");
-          }}
-        />
-      </form>
-    </div>
+    <>
+      <div className=" p-8 h-screen  bg-[#74C69D]">
+        <div className="flex justify-between items-center">
+          <div className="flex gap-2 items-center">
+            <img src="/images/newLogo.svg" alt="logo" className="h-[40px]" />
+            <p className="text-[35px] text-white ">Start</p>
+          </div>
+          <img
+            src="/images/menu.png"
+            alt="menu"
+            className="cursor-pointer flex md:hidden"
+            onClick={() => setShow((prev) => !prev)}
+          />
+          <div className="hidden md:flex  text-white gap-10 ">
+            <Link to="/" className="cursor-pointer hover:text-green-400">
+              Home
+            </Link>
+            <Link className="cursor-pointer hover:text-green-400" to="/">
+              About
+            </Link>
+            <Link className="cursor-pointer hover:text-green-400" to="/">
+              Portfolio
+            </Link>
+            <Link className="cursor-pointer hover:text-green-400" to="/">
+              Contact
+            </Link>
+          </div>
+        </div>
+
+        <div
+          className={` ${show ? "flex" : "hidden"} flex-col gap-5 bg-white  mt-5 py-5 px-4 items-center  rounded`}
+        >
+          <Link to="/" className="cursor-pointer hover:text-green-400">
+            Home
+          </Link>
+          <Link className="cursor-pointer hover:text-green-400" to="/">
+            About
+          </Link>
+          <Link className="cursor-pointer hover:text-green-400" to="/">
+            Portfolio
+          </Link>
+          <Link className="cursor-pointer hover:text-green-400" to="/">
+            Contact
+          </Link>
+        </div>
+      </div>
+    </>
   );
 };
 
-// use state vs variable
-
-// 1. form inputs
-// 2.  toggle UI element
-// 3. counter
-// 4. loading
-// 5. any. data that changes and affect UI
+export default Menu;

@@ -18,16 +18,7 @@ const Button = ({ text, style }) => {
       >
         {text}
       </button>
-      <button onClick={() => setIsVisibble(!isVisible)}>Toggle</button>
-      {isVisible && "Yeah, I am visible"};
-      <input
-        value={coffee}
-        onChange={function (e) {
-          setCoffee(e.target.value);
-        }}
-        className="border-2 border-white border-solid"
-        type="text"
-      />
+      
     </>
   );
 };
