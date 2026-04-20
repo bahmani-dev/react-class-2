@@ -15,7 +15,7 @@ export const Home = () => {
       />
 
       <div className="w-[50%] h-[100%] mt-[150px] ml-[150px] relative z-10 text-white ">
-        <p className="text-[22px] font-medium">
+        <p className="text-[22px] font-medium font-sans">
           We have got your morning covered with
         </p>
 

@@ -2,7 +2,7 @@
 
 * {
   /* color: white; */
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 
 /* button {
@@ -11,4 +11,8 @@
 
 #overlay {
   z-index: 0;
+}
+
+.crimson {
+  font-family: "Crimson Text", serif;
 }
