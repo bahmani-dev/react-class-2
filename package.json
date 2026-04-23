@@ -13,6 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "@fontsource/crimson-text": "^5.2.7",
     "@fontsource/poppins": "^5.2.7",
+    "framer-motion": "^12.38.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1"
